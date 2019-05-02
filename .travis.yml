@@ -1,8 +1,22 @@
 dist: xenial
+
 language: php
 
-php:
-  - 7.1
+sudo: required
 
+matrix:
+  include:
+    - php: 7.1
+      env: PHP_VERSION="7.1"
+    - php: 7.2
+      env: PHP_VERSION="7.2"
+    - php: 7.3
+      env: PHP_VERSION="7.3"
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install -y python-software-properties
+  - LC_ALL=C.UTF-8 sudo add-apt-repository -y ppa:ondrej/php
+  - sudo apt-get update
+  - sudo apt-get install -y apt-transport-https apt-utils php"$PHP_VERSION"-cli php"$PHP_VERSION"-gd
 script:
-  - php -r "var_dump(function_exists('imagewebp'));"
+  - sudo php -r "var_dump(function_exists('imagewebp'));"
