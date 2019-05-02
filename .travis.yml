@@ -1,7 +1,8 @@
+dist: xenial
 language: php
 
 php:
-  - 7.1.11
+  - 7.1
 
 script:
   - php -r "var_dump(function_exists('imagewebp'));"
