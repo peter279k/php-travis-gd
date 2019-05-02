@@ -4,4 +4,4 @@ php:
   - 7.1.11
 
 script:
-  - php -r "echo function_exists('imagewebp');"
+  - php -r "var_dump(function_exists('imagewebp'));"
