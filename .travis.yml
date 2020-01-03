@@ -6,9 +6,6 @@ sudo: required
 
 matrix:
   include:
-    - php: 5.5
-      env: PHP_VERSION="5.5"
-      dist: trusty
     - php: 5.6
       env: PHP_VERSION="5.6"
     - php: 7.1
@@ -26,4 +23,7 @@ before_install:
   - sudo apt-get update
   - sudo apt-get install -y apt-transport-https apt-utils php"$PHP_VERSION"-cli php"$PHP_VERSION"-gd
 script:
+  - php -v
+  - sudo php -v
+  - php -r "var_dump(function_exists('imagewebp'));"
   - sudo php -r "var_dump(function_exists('imagewebp'));"
