@@ -26,8 +26,8 @@ before_install:
   - sudo apt-get install -y apt-transport-https apt-utils php"$PHP_VERSION"-cli php"$PHP_VERSION"-gd
 script:
   - php -v
-  - sudo php -v
+  - /usr/bin/php -v
   - php -r "var_dump(function_exists('imagewebp'));"
   - php -r "var_dump(gd_info());"
-  - sudo php -r "var_dump(function_exists('imagewebp'));"
-  - sudo php -r "var_dump(gd_info());"
+  - /usr/bin/php -r "var_dump(function_exists('imagewebp'));"
+  - /usr/bin/php -r "var_dump(gd_info());"
