@@ -28,4 +28,6 @@ script:
   - php -v
   - sudo php -v
   - php -r "var_dump(function_exists('imagewebp'));"
+  - php -r "var_dump(gd_info());"
   - sudo php -r "var_dump(function_exists('imagewebp'));"
+  - sudo php -r "var_dump(gd_info());"
