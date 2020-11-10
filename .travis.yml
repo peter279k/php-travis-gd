@@ -26,6 +26,7 @@ before_install:
   - sudo apt-get install -y apt-transport-https apt-utils php"$PHP_VERSION"-cli php"$PHP_VERSION"-gd
 script:
   - php -v
+  - rm -f /home/travis/.phpenv/shims/php
   - ln -s /usr/bin/php /home/travis/.phpenv/shims/php
   - which php
   - php -r "var_dump(function_exists('imagewebp'));"
